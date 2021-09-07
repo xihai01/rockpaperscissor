@@ -1,0 +1,33 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body, main {
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button, div {
+  margin-bottom: 1.5em;
+}
+
+.final-results {
+  margin-bottom: 2em;
+  font-size: 5em;
+}
+
+.score {
+  display: flex;
+  justify-content: center;
+  width: 1200px;
+}
+
+#player {
+  padding-right: 1.5em;
+}

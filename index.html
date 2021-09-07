@@ -1,71 +1,25 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Rock, Paper, Scissors</title>
-    <meta charset="UTF-8" />
-  </head>
-  <body>
-    <script>
-
-      function computerPlay() {
-        let rock = 1;
-        let paper = 2;
-        let scissors = 3;
-        let randomNumber = Math.floor(Math.random() * 3) + 1;
-        
-        if (randomNumber === rock) {
-          return 'rock';
-        } else if (randomNumber === paper) {
-          return 'paper';
-        } else {
-          return 'scissors';
-        }
-      }
-
-      function playRound(playerSelection, computerSelection, blankSpace) {
-        playerSelection = playerSelection.toLowerCase();
-
-        //return an error if user didn't enter anything in prompt
-        if (blankSpace === true) {
-          blankSpace = false;
-          return 'Please enter a choice'
-        }
-
-        //compare the choice the user entered against the computer's 
-        if ((playerSelection === 'rock' && computerSelection === 'paper') || (playerSelection === 'paper' && computerSelection === 'scissors') 
-          || (playerSelection === 'scissors' && computerSelection === 'rock')) {
-            return `You Lose! ${computerSelection} beats ${playerSelection}`;
-          }
-        else if ((playerSelection === 'rock' && computerSelection === 'scissors') || (playerSelection === 'paper' && computerSelection === 'rock')
-          || (playerSelection === 'scissors' && computerSelection === 'paper')) {
-            return `You Win! ${playerSelection} beats ${computerSelection}`;
-          }
-        else if ((playerSelection === 'rock' && computerSelection === 'rock') || (playerSelection === 'paper' && computerSelection === 'paper')
-          || (playerSelection === 'scissors' && computerSelection === 'scissors')){
-          return `It's a Tie!`;
-        } else {
-          return "The choice you entered is invalid. Please enter a correct choice.\nDouble check the choice is spelled correctly"
-        }
-      }
-
-      //play 5 rounds of the game and outputs the results to the console
-      function game() {
-        let playerSelection;
-        let blankSpace;
-        for (let i = 0; i < 5; i++) {
-          playerSelection = window.prompt("Enter Rock, Paper or Scissors:");
-          if ((playerSelection.trim().length === 0)) {
-            blankSpace = true;
-            console.log(playRound(playerSelection,computerPlay(), blankSpace));
-          } else {
-            blankSpace = false;
-            console.log(playRound(playerSelection,computerPlay(), blankSpace));
-          }
-        }
-      }
-
-      game();
-
-    </script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock, Paper, Scissors</title>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="reset.css">
+  <link rel="stylesheet" type="text/css" href="layout.css">
+</head>
+<body>
+  <main>
+    <h1 class="final-results"></h1>
+    <div class="results"></div>
+    <div class="score">
+      <p id="player">Player: 0</p>
+      <p id="computer">CPU: 0</p>
+    </div>
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
+  </main>
+</body>
 </html>
