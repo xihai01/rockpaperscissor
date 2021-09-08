@@ -83,7 +83,25 @@ function resetAll() {
   //remove reset button and add back the three buttons
   main.removeChild(reset);
 
-  const buttonRock = document.createElement('button');
+  for (let i = 0; i < 3; i++) {
+    const button = document.createElement('button');
+    if (i == 0) {
+      button.textContent = 'Rock';
+      button.setAttribute('id', 'rock');
+    }
+    if (i == 1) {
+      button.textContent = 'Paper';
+      button.setAttribute('id', 'paper');
+    }
+    if (i == 2) {
+      button.textContent = 'Scissors';
+      button.setAttribute('id', 'scissors');
+    }
+    main.appendChild(button);
+    button.addEventListener('click', selectChoice);
+  }
+  
+  /*const buttonRock = document.createElement('button');
   buttonRock.textContent = 'Rock';
   buttonRock.setAttribute('id', 'rock');
   const buttonPaper = document.createElement('button');
@@ -97,7 +115,7 @@ function resetAll() {
   main.appendChild(buttonScissors);
   buttonRock.addEventListener('click', selectChoice);
   buttonPaper.addEventListener('click', selectChoice);
-  buttonScissors.addEventListener('click', selectChoice);
+  buttonScissors.addEventListener('click', selectChoice);*/
 }
 
 /*for (let i = 0; i < 5; i ++) {
