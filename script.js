@@ -100,28 +100,7 @@ function resetAll() {
     main.appendChild(button);
     button.addEventListener('click', selectChoice);
   }
-  
-  /*const buttonRock = document.createElement('button');
-  buttonRock.textContent = 'Rock';
-  buttonRock.setAttribute('id', 'rock');
-  const buttonPaper = document.createElement('button');
-  buttonPaper.textContent = 'Paper';
-  buttonPaper.setAttribute('id', 'paper');
-  const buttonScissors = document.createElement('button');
-  buttonScissors.textContent = 'Scissors';
-  buttonScissors.setAttribute('id', 'scissors');
-  main.appendChild(buttonRock);
-  main.appendChild(buttonPaper);
-  main.appendChild(buttonScissors);
-  buttonRock.addEventListener('click', selectChoice);
-  buttonPaper.addEventListener('click', selectChoice);
-  buttonScissors.addEventListener('click', selectChoice);*/
 }
-
-/*for (let i = 0; i < 5; i ++) {
-  score.textContent = `${totalPoints}`;
-  totalPoints += 1;
-}*/
 
 function computerPlay() {
   let rock = 1;
@@ -153,20 +132,3 @@ function playRound(playerSelection, computerSelection) {
     return `tie`;
   } 
 }
-
-//play 5 rounds of the game and outputs the results to the console
-/* function game() {
-  let playerSelection;
-  let blankSpace;
-  for (let i = 0; i < 5; i++) {
-    playerSelection = window.prompt("Enter Rock, Paper or Scissors:");
-    if ((playerSelection.trim().length === 0)) {
-      blankSpace = true;
-      console.log(playRound(playerSelection,computerPlay(), blankSpace));
-    } else {
-      blankSpace = false;
-      console.log(playRound(playerSelection,computerPlay(), blankSpace));
-    }
-  }
-}
-*/
